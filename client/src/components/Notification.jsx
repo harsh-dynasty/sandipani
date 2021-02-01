@@ -34,7 +34,7 @@ export default class NotificationSection extends React.Component{
               </Fade>
             )
         })
-        array=array.reverse()
+       
         return(
         <div>
         
@@ -48,7 +48,7 @@ export default class NotificationSection extends React.Component{
                       
                       <div className="tab-content">
                         <div id="sydney" className="tab-pane  active">
-                          <div className="row">
+                          <div className="row" >
                               {array}
                               
                             
