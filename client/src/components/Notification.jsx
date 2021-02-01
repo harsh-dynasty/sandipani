@@ -21,6 +21,20 @@ export default class NotificationSection extends React.Component{
         this.setState({notifications:data})
     }
     render(){
+        var array=this.state.notifications.map(notification=>{
+            return(
+              <Fade left>
+              <div className="col-md-4 col-sm-4 col-xs-12">
+                  <div className="box_carrers_inner">
+                      <h3>{notification.date}</h3><hr/>
+                      <p>{notification.mssg}</p>
+                      
+                  </div>
+              </div>
+              </Fade>
+            )
+        })
+        array=array.reverse()
         return(
         <div>
         
@@ -35,19 +49,7 @@ export default class NotificationSection extends React.Component{
                       <div className="tab-content">
                         <div id="sydney" className="tab-pane  active">
                           <div className="row">
-                              {this.state.notifications.map(notification=>{
-                                  return(
-                                    <Fade left>
-                                    <div className="col-md-4 col-sm-4 col-xs-12">
-                                        <a href="careers-inner.php" target="_blank" className="box_carrers_inner">
-                                            <h3>{notification.date}</h3><hr/>
-                                            <p>{notification.mssg}</p>
-                                            
-                                        </a>
-                                    </div>
-                                    </Fade>
-                                  )
-                              }).reverse()}
+                              {array}
                               
                             
                           </div>
