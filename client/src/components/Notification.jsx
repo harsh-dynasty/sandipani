@@ -18,8 +18,7 @@ export default class NotificationSection extends React.Component{
     async componentDidMount(){
         var res=await axios.get('/getNotifications')
         var data=await res.data.docs
-        var array=data.reverse()
-        this.setState({notifications:array})
+        this.setState({notifications:data})
     }
     render(){
         return(
@@ -48,7 +47,7 @@ export default class NotificationSection extends React.Component{
                                     </div>
                                     </Fade>
                                   )
-                              })}
+                              }).reverse()}
                               
                             
                           </div>
