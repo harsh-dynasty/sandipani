@@ -17,7 +17,7 @@ export default class ContactUs extends React.Component{
     handlePost(){
         if($("#pin").val()=='123456'){
            
-            axios.post("http://localhost:5000/addNotification",{notDate:this.state.notDate,mssg:this.state.mssg})
+            axios.post("/addNotification",{notDate:this.state.notDate,mssg:this.state.mssg})
             .then(res=>{
                 this.setState({post:false})
             })
