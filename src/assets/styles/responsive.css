@@ -1,0 +1,11 @@
+@media screen and (max-width: 1024px) {
+	.about_content{padding: 0px;}
+}
+@media screen and (max-width: 767px) {
+	.image-about{ margin-top: 20px; }
+	.below_header_section{ height: 35vh; }
+	.middle_section{ width: 80%; margin: auto; }
+	.middle_section h3{ font-size: 20px; line-height: 30px; }
+	.middle_section p{ font-size: 14px; line-height: 20px; }
+	.image-about img{ margin-bottom: 30px; }
+}
