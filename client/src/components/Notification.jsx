@@ -17,23 +17,12 @@ export default class NotificationSection extends React.Component{
     }
     async componentDidMount(){
         var res=await axios.get('/getNotifications')
+        console.log(res)
         var data=await res.data.docs
         this.setState({notifications:data})
     }
     render(){
-        var array=this.state.notifications.map(notification=>{
-            return(
-              <Fade left>
-              <div className="col-md-4 col-sm-4 col-xs-12">
-                  <div className="box_carrers_inner">
-                      <h3>{notification.date}</h3><hr/>
-                      <p>{notification.mssg}</p>
-                      
-                  </div>
-              </div>
-              </Fade>
-            )
-        })
+      
        
         return(
         <div>
@@ -47,9 +36,21 @@ export default class NotificationSection extends React.Component{
                   
                       
                       <div className="tab-content">
-                        <div id="sydney" className="tab-pane  active">
+                        <div className="tab-pane  active">
                           <div className="row" >
-                              {array}
+                              {this.state.notifications.map(notification=>{
+                                return(
+                                <Fade left>
+                                <div className="col-md-4 col-sm-4 col-xs-12">
+                                    <div className="box_carrers_inner">
+                                        <h3>{notification.date}</h3><hr/>
+                                        <p>{notification.mssg}</p>
+                                        
+                                    </div>
+                                </div>
+                                </Fade>
+                                )
+                            })}
                               
                             
                           </div>
