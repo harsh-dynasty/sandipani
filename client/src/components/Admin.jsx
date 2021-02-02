@@ -19,6 +19,7 @@ export default class ContactUs extends React.Component{
            
             axios.post("/addNotification",{notDate:this.state.notDate,mssg:this.state.mssg})
             .then(res=>{
+                
                 this.setState({post:false})
             })
         }

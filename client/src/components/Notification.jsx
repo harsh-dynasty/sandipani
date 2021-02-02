@@ -17,11 +17,7 @@ export default class NotificationSection extends React.Component{
         }
     }
     async componentDidMount(){
-        var res=await axios.get('/getNotifications',{
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        var res=await axios.get('/getNotifications')
         
         var data=await res.data.docs
         console.log(data)
