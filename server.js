@@ -1,6 +1,6 @@
 const express=require('express')
 const app=express()
-
+const router=express.Router()
 const cors= require('cors')
 const path=require('path')
 
@@ -30,7 +30,7 @@ var notifications=mongoose.model('notifications',notificationSchema);
 
 
 
-app.get('/getNotifications',(req,res)=>{
+router.get('/getNotifications',(req,res)=>{
     
     notifications.find({})
     .then((docs)=>{
@@ -38,7 +38,7 @@ app.get('/getNotifications',(req,res)=>{
     })
 })
 
-app.post('/addNotification',(req,res)=>{
+router.post('/addNotification',(req,res)=>{
     
     var date=req.body.notDate;
     var mssg=req.body.mssg;
@@ -50,3 +50,4 @@ app.post('/addNotification',(req,res)=>{
 
 })
 
+module.exports = router
