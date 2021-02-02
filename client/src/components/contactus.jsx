@@ -14,7 +14,7 @@ export default class ContactUs extends React.Component{
     this.handleSubmit=this.handleSubmit.bind(this)
   }
   async handleSubmit(){
-      var res=await axios.post("http://localhost:5000/contactus",{email:this.state.email,subject:this.state.subject,message:this.state.message})
+      var res=await axios.post("/contactus",{email:this.state.email,subject:this.state.subject,message:this.state.message})
       this.setState({
         subject:'',
       message:'',
