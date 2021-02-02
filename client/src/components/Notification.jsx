@@ -20,7 +20,7 @@ export default class NotificationSection extends React.Component{
         var res=await axios.get('/getNotifications')
         
         var data=await res.data.docs
-        console.log(data)
+        console.log(res)
         this.setState({notifications:data.reverse()})
     }
     render(){
