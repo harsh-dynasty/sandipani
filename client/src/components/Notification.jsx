@@ -8,6 +8,7 @@ import '../assets/styles/newstyle.css'
 import {Fade } from 'react-reveal';
 import axios from 'axios';
 
+
 export default class NotificationSection extends React.Component{ 
     constructor(props){
         super(props)
@@ -16,10 +17,15 @@ export default class NotificationSection extends React.Component{
         }
     }
     async componentDidMount(){
-        var res=await axios.get('/getNotifications')
+        var res=await axios.get('/getNotifications',{
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
         
         var data=await res.data.docs
-        this.setState({notifications:data})
+        console.log(data)
+        this.setState({notifications:data.reverse()})
     }
     render(){
       
