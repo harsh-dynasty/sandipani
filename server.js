@@ -34,6 +34,7 @@ router.get('/getNotifications',(req,res)=>{
     
     notifications.find({})
     .then((docs)=>{
+       res.setHeader('Content-Type', 'application/json')
        res.json({docs:docs})
     })
 })
