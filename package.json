@@ -1,5 +1,6 @@
 {
   "name": "backend",
+  "author":"Harsh Soni",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
